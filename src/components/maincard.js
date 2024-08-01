@@ -17,10 +17,17 @@ export default function Maincard() {
     );
   }
 
+  function calculate(){
+    
+  }
+
   return (
     <>
       <div className="main-card">
         {cards}
+      </div>
+      <div className="calculate">
+      <button onClick={calculate}>calculate</button>
       </div>
     </>
   );
