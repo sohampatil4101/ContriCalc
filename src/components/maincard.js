@@ -17,7 +17,7 @@ export default function Maincard() {
     setCardsData(updatedCardsData);
   }
 
-    function calculate() {
+  function calculate() {
     const final = cardsData.map(card => ({ ...card }));
     let total = 0
     let payable = 0
@@ -25,7 +25,19 @@ export default function Maincard() {
       total = total + parseInt(final[i].number)
     }
     payable = total/count
-    console.log('copy:', total, count, payable);
+
+    for(let data in final){
+      console.log(payable, final[data].number)
+      if(parseFloat(final[data].number) >= payable){
+        console.log('cbj')
+        final[data].number = String(parseFloat(final[data].number) - payable) + "++"
+      }
+      else{
+        final[data].number = String(parseFloat(payable - final[data].number)) + "--"
+      }
+    }
+    console.log(cardsData)
+    console.log(final)
   }
   const cards = [];
   for (let i = 0; i < count; i++) {
