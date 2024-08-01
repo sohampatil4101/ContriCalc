@@ -17,13 +17,14 @@ export default function Maincard() {
     setCardsData(updatedCardsData);
   }
 
-  function calculate() {
-    console.log(cardsData);
-    
-    console.log(typeof(cardsData));
-    // Perform your calculation logic here
+    function calculate() {
+    const final = cardsData.map(card => ({ ...card }));
+    let total = 0
+    for(let i = 0; i<final.length; i++){
+      total = total + final[i].number
+    }
+    // console.log('copy:', final[0].number);
   }
-
   const cards = [];
   for (let i = 0; i < count; i++) {
     cards.push(
