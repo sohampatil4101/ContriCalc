@@ -20,10 +20,12 @@ export default function Maincard() {
     function calculate() {
     const final = cardsData.map(card => ({ ...card }));
     let total = 0
+    let payable = 0
     for(let i = 0; i<final.length; i++){
-      total = total + final[i].number
+      total = total + parseInt(final[i].number)
     }
-    // console.log('copy:', final[0].number);
+    payable = total/count
+    console.log('copy:', total, count, payable);
   }
   const cards = [];
   for (let i = 0; i < count; i++) {
