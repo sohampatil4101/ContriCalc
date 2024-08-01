@@ -1,23 +1,27 @@
 *{
   margin: 0;
   padding: 0;
-  background-color: #1a2e2e;;
+  /* background-color: #1a2e2e;; */
   /* scroll-behavior: smooth; */
   box-sizing: border-box;
 }
 
 .main-card{
   display: flex;
-  justify-content: center;
-  height: 50vh;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 100%;
   border: 2px solid pink;
+  margin-top: 15px;
 }
 .card{
+  margin-bottom: 5px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   align-self: center;
-  width: 30vw;
+  width: 30%;
   height: 55px;
   border: 2px solid black;
   /* background-color: red; */
