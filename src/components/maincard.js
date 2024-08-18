@@ -36,8 +36,26 @@ export default function Maincard() {
         final[data].number = String(parseFloat(payable - final[data].number)) + "--"
       }
     }
-    console.log(cardsData)
+
+    const take = Object.entries(final)
+    .filter(([key, value]) => value[0] === '+')
+    .reduce((obj, [key, value]) => {
+        obj[key] = value;
+        return obj;
+    }, {});
+
+    const give = Object.entries(final)
+        .filter(([key, value]) => value[0] === '-')
+        .reduce((obj, [key, value]) => {
+            obj[key] = value;
+            return obj;
+        }, {});
+
+    console.log("Take:", take);
+    console.log("Give:", give);
+
     console.log(final)
+    return final
   }
   const cards = [];
   for (let i = 0; i < count; i++) {
